@@ -62,8 +62,8 @@ cd azure-terraform-infra
 6. Access the web server: http_url      = "http://<PUBLIC_IP>"
                           public_ip     = "<PUBLIC_IP>"
                           ssh_command   = "ssh azureuser@<PUBLIC_IP>"
-Open your browser and visit http://<PUBLIC_IP> to see the live Nginx server.
-7.Clean up: terraform destroy -auto-approve
+ Open your browser and visit http://<PUBLIC_IP> to see the live Nginx server.
+7. Clean up: terraform destroy -auto-approve
 
 ### Terraform Apply — Deployment Output
 <img src="https://raw.githubusercontent.com/Pramod0232/azure-terraform-infra/main/terraform-apply.png" alt="Terraform Apply Output" width="900">
