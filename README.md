@@ -1,4 +1,4 @@
-# azure-terraform-infra
+# Azure-terraform-infra
 
 Terraform code to provision a complete Azure network with VNet, NSG, Public IP, NIC, and a Linux VM running Nginx.
 
@@ -47,12 +47,30 @@ azure-terraform-infra/
 ├── azure-portal-rg.png.png # Azure Portal resource view
 └── terraform-apply.png.png # Terraform apply output
 
-Live Nginx Web Server on Azure VM
-https://azure-vm-nginx.png.png/
 
-Azure Portal — All Provisioned Resources
-https://azure-portal-rg.png.png/
+### 🚀 Deployment Instructions
 
-Terraform Apply — Deployment Output
-https://terraform-apply.png.png/
+To deploy this infrastructure yourself:
+
+1. Clone the repository: git clone https://github.com/Pramod0232/azure-terraform-infra.git
+cd azure-terraform-infra
+
+2. Login to Azure: az login
+3. Initialize Terraform: terraform init
+4. Preview the infrastructure: terraform plan
+5. Deploy the infrastructure: terraform apply -auto-approve
+6. Access the web server: http_url      = "http://<PUBLIC_IP>"
+                          public_ip     = "<PUBLIC_IP>"
+                          ssh_command   = "ssh azureuser@<PUBLIC_IP>"
+Open your browser and visit http://<PUBLIC_IP> to see the live Nginx server.
+7.Clean up: terraform destroy -auto-approve
+
+### Terraform Apply — Deployment Output
+<img src="https://raw.githubusercontent.com/Pramod0232/azure-terraform-infra/main/terraform-apply.png" alt="Terraform Apply Output" width="900">
+
+### Azure Portal — All Provisioned Resources
+<img src="https://raw.githubusercontent.com/Pramod0232/azure-terraform-infra/main/azure-portal-rg.png" alt="Azure Portal Resource Group" width="900">
+
+### Live Nginx Web Server on Azure VM
+<img src="https://raw.githubusercontent.com/Pramod0232/azure-terraform-infra/main/azure-vm-nginx.png" alt="Nginx Welcome Page" width="900">
 
