@@ -1,19 +1,29 @@
-# Azure Infrastructure with Terraform
+# azure-terraform-infra
 
-Terraform configuration to provision a complete Azure environment from scratch —
-Resource Group, Virtual Network, Subnet, Network Security Group, Public IP, Network
-Interface, and a Linux VM running Nginx.
+Terraform code to provision a complete Azure network with VNet, NSG, Public IP, NIC, and a Linux VM running Nginx.
 
-## Architecture
-Resource Group (rg-terraform-demo)
-├── Virtual Network (vnet-demo) 10.0.0.0/16
-│ └── Subnet (subnet-demo) 10.0.1.0/24
-├── Network Security Group (nsg-demo)
-│ ├── Inbound rule: SSH (port 22)
-│ └── Inbound rule: HTTP (port 80)
-├── Public IP (pip-demo) Static, Standard SKU
-├── Network Interface (nic-demo)
-└── Linux VM (vm-demo)
-├── Ubuntu 22.04 LTS
-├── Size: Standard_B2ats_v2
-└── Nginx auto-installed via cloud-init
+## Azure Infrastructure with Terraform (Project 3)
+
+This project demonstrates Infrastructure as Code (IaC) using Terraform to provision a complete Azure environment in the Central India region.
+
+### 🏗️ Architecture Overview
+
+The Terraform script provisions the following Azure resources:
+
+- **Resource Group**: Container for all Azure resources (`rg-terraform-demo`).
+- **Virtual Network**: Isolated network with address space `10.0.0.0/16`.
+- **Subnet**: Dedicated subnet for the VM (`10.0.1.0/24`).
+- **Network Security Group**: Firewall with inbound rules for SSH (22) and HTTP (80).
+- **Public IP**: Static, Standard SKU public address.
+- **Network Interface**: VM's NIC attached to the subnet and public IP.
+- **Linux VM**: Ubuntu 22.04 LTS (`Standard_B2ats_v2`) with Nginx auto-installed via cloud-init.
+
+### 🛠️ Technologies Used
+
+- **Infrastructure as Code**: Terraform
+- **Cloud**: Microsoft Azure (Central India)
+- **Compute**: Azure Linux VM (Ubuntu 22.04)
+- **Web Server**: Nginx (provisioned via cloud-init)
+- **Networking**: VNet, Subnet, NSG, Public IP
+
+### 📂 Project Structure
